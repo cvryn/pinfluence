@@ -55,7 +55,7 @@ const CommentForm = ({ pinId, onCommentSubmitted, canLeaveComment }) => {
   };
 
   const handleEnterKey = (e) => {
-    if (e.key === "Enter" ) {
+    if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       handleCommentSubmit(e)
     }
