@@ -94,7 +94,7 @@ function SearchBar() {
 
           {dropDown && (
             <div id="search-dropdown">
-              <h1 style={{ paddingLeft: "20px" }}>Pins by Search {query} </h1>
+              <h1 style={{ paddingLeft: "20px" }}>Search for Pins Using Keyword {query ? `"${query}"` : '' } </h1>
               {query ? (
                 searchedPins.length > 0 ? (
                   <ul id="search-dropdown-list">
