@@ -54,6 +54,13 @@ const CommentForm = ({ pinId, onCommentSubmitted, canLeaveComment }) => {
     }
   };
 
+  const handleEnterKey = (e) => {
+    if (e.key === "Enter" ) {
+      e.preventDefault();
+      handleCommentSubmit(e)
+    }
+  }
+
   if (!canLeaveComment) return null;
 
   return (
@@ -63,6 +70,7 @@ const CommentForm = ({ pinId, onCommentSubmitted, canLeaveComment }) => {
           <textarea
             value={commentText}
             onChange={handleChange}
+            onKeyDown={handleEnterKey}
             placeholder="Leave a comment!"
             rows={1}
             className="comment-textarea"
